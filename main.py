@@ -11,7 +11,8 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        uploaded_file = request.files["file"]
+        uploaded_file = request.files["pdf"]
+
         if uploaded_file.filename.endswith(".pdf"):
             # Сохраняем PDF во временный файл
             temp_pdf_path = "temp_input.pdf"
